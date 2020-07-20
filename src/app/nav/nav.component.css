@@ -1,0 +1,22 @@
+nav{
+    height: 80px ;
+}
+.navbar-brand{
+    margin-left: 200px;
+    color: black;
+    font-weight: 600;
+    font-size: 21px;
+}
+ul{
+    margin-left: 730px;
+}
+.nav-link{
+    color:black;
+    font-weight: 600;
+}
+#card{
+    margin-left: 50px;
+}
+i{
+    color: black;
+}
