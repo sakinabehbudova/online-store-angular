@@ -1,12 +1,37 @@
+<div class="wrapper">
 <div class="container">
+    <div class="row">
+        <form>
+            <div class="form-group">
+                
+                <input type="text" class="form-control" id="search"  placeholder=" What are you looking for ?">
+              </div>
+              <button id="btn1" type="button" class="btn btn-success">SEARCH</button>
+        </form>
+
+    </div>
+
     <div class=row>
         <div *ngFor="let product of products" class="card" style="width: 16rem;">
             <img [src]="product.imageUrl" class="card-img-top w-100">
             <div class="card-body">
                 <p class="card-text">{{product.name}}</p>
                 <hr>
-                <p>{{product.price}}</p>
+     
+             <div class="kg">kg</div>
+            
+                <div class="NumberSpinner" style="margin-left: 4rem;">
+                    <ngx-number-spinner
+                     style="margin-left: 4rem;" 
+                     [value]="1 "
+                     (change)="change($event)" 
+                     [min]="1"
+                     [max]="9">
+                    </ngx-number-spinner>
+                </div>
+            
                 <button class="btn btn-success">ADD TO BASKET</button>
             </div>
         </div>
     </div>
+</div>
