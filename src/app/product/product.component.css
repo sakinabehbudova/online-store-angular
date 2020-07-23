@@ -1,12 +1,12 @@
 #btn1{
   margin-top: -23px;
-    margin-left: 800px;
+    margin-left: 805px;
     height: 50px;
 }
 #search{
     height: 52px;
     width: 600px;
-    margin-left: 190px;
+    margin-left: 195px;
     margin-top: 10px;
     margin-bottom: -45px;
    
@@ -18,6 +18,10 @@
     margin-top: 40px;
     
     
+}
+.card-text{
+    margin-top: -10px;
+    margin-bottom: -10px;
 }
 img{
     border-top-left-radius: 25px;
@@ -34,11 +38,11 @@ button{
     
 }
 .kg{
-    margin-top: 35px;
+    margin-top: 10px;
 }
 .NumberSpinner{
-    margin-top:-60px ;
-    margin-bottom: 30px;
+    margin-top:-55px ;
+    margin-bottom: 20px;
     width: 150px; 
 margin-left: 51px !important;
     border-radius: 20px;
