@@ -8,12 +8,14 @@ import { ProductComponent } from './product/product.component';
 
 import { NgxNumberSpinnerModule } from 'ngx-number-spinner';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductFilterPipe } from './product/product-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    ProductComponent
+    ProductComponent,
+    ProductFilterPipe
 
   ],
   imports: [
