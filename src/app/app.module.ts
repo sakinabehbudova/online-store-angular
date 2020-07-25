@@ -9,6 +9,7 @@ import { ProductComponent } from './product/product.component';
 import { NgxNumberSpinnerModule } from 'ngx-number-spinner';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductFilterPipe } from './product/product-filter.pipe';
+import{NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ProductFilterPipe } from './product/product-filter.pipe';
     AppRoutingModule,
     NgxNumberSpinnerModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
