@@ -28,7 +28,7 @@
                         </ngx-number-spinner>
                     </div>
 
-                    <button (click)="addToBasket(product)" class="btn btn-success">ADD TO BASKET</button>
+                    <a routerLink="products/{{product.name}}" (click)="addToBasket(product)" class="btn btn-success">ADD TO BASKET</a>
                 </div>
             </div>
         </div>

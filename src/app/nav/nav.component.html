@@ -9,11 +9,11 @@
             <div class="collapse navbar-collapse" id="navbar">
                 <ul class="navbar-nav">
                     <li *ngFor="let category of categories" class="nav-item">
-                        <a class="nav-link" href="#">{{category.name}}</a>
+                        <a class="nav-link" routerLink="products/category/{{category.id}}" >{{category.name}}</a>
                     </li>
                 </ul>
                 <div id="card">
-                    <a href=""><i class="fa fa-shopping-bag fa-2x"></i></a>
+                    <a routerLink="/basket"><i class="fa fa-shopping-bag fa-2x"></i></a>
                 </div>
             </div>
         </nav>

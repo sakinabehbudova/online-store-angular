@@ -12,7 +12,7 @@ export class NavComponent implements OnInit {
   title="STORE";
   categories:Category[]=[
     {id:1,name:"FRUITS"},
-    {id:1,name:"VEGETABLES"}
+    {id:2,name:"VEGETABLES"}
   ]
 
   ngOnInit(): void {

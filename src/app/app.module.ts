@@ -11,13 +11,16 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductFilterPipe } from './product/product-filter.pipe';
 import{NgxPaginationModule} from 'ngx-pagination';
 import { AlertifyService } from './services/alertify.service';
+import{HttpClientModule} from '@angular/common/http';
+import { BasketComponent } from './basket/basket.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     ProductComponent,
-    ProductFilterPipe
+    ProductFilterPipe,
+    BasketComponent
 
   ],
   imports: [
@@ -26,7 +29,8 @@ import { AlertifyService } from './services/alertify.service';
     NgxNumberSpinnerModule,
     FormsModule,
     ReactiveFormsModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    HttpClientModule
   ],
   providers: [AlertifyService],
   bootstrap: [AppComponent]
