@@ -16,8 +16,8 @@
                 <img [src]="product.imageUrl" class="card-img-top w-100">
                 <div class="card-body">
                     <div class="row">
-                        <div class="card-text col">{{product.name}}</div>
-                        <div class="col">{{product.price}} AZN</div>
+                        <div class="card-text col-7">{{product.name}}</div>
+                        <div class="col-5">{{product.price}} AZN</div>
                     </div>
                     <hr>
                     <div class="kg">kg</div>
@@ -30,7 +30,7 @@
                 </div>
             </div>
         </div>
-        <div id="pagination">
+        <div class="text-center" id="pagination">
             <pagination-controls id="listing_pagination" maxSize="5" directionLinks="true" (pageChange)="page = $event">
             </pagination-controls>
         </div>
