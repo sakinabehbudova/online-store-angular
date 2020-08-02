@@ -15,7 +15,7 @@ export class BasketComponent implements OnInit {
     this.buyProductForm=this.fb.group({
      firstName: ["",Validators.required],
      lastName: ["",Validators.required],
-     email: ["",Validators.required],
+     email: ["",Validators.required,Validators.email],
      phoneNumber: ["",Validators.required],
      adress: ["",Validators.required],
      nameOnCard: ["",Validators.required],
@@ -28,6 +28,7 @@ export class BasketComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.createBuyProductForm();
   }
 
 }
