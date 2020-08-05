@@ -6,19 +6,17 @@
 #search{
     height: 52px;
     margin-top: 8px;
-    margin-bottom: 0px;
-   
+    
 }
 .card{
     border-radius: 25px;
     margin:0 auto;
-    margin-top: 40px;
+    margin-top: 20px;
     padding: 0;
-    
     
 }
 .card-text{
-    font-weight: 600;
+    font-weight: 550;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
 }
 img{
@@ -27,7 +25,7 @@ img{
     height: 230px;
 }
 #addToBasket{
-    /*border: 2px solid #8cba51; */
+    border: 2px solid #8cba51; 
     font-size: 13px;
     margin-left: 6px;
     color: white;
@@ -36,9 +34,7 @@ img{
     background-color: #8cba51; 
     
 }
-.kg{
-    margin-top: 10px;
-}
+
 .NumberSpinner{
     margin-top:-55px ;
     margin-bottom: 20px;
@@ -51,5 +47,5 @@ img{
 
 #pagination{
     padding-bottom: 12px;
-    margin-top: 50px;  
+    margin-top: 40px;  
 }
