@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, HostListener } from '@angular/core';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { ViewChild, ElementRef, } from '@angular/core';
 @ViewChild('ccNumber')
 
@@ -12,37 +12,35 @@ import { ViewChild, ElementRef, } from '@angular/core';
   styleUrls: ['./basket.component.css']
 })
 export class BasketComponent implements OnInit {
-  
-  
 
-  constructor(private fb:FormBuilder,private ccNumberField: ElementRef) { }
-  header="My Basket";
-  buyProductForm :FormGroup;
-  createBuyProductForm(){
-    this.buyProductForm=this.fb.group({
-     firstName: ["",Validators.required],
-     lastName: ["",Validators.required],
-     email: ["",Validators.required,Validators.email],
-     phoneNumber: ["",Validators.required],
-     adress: ["",Validators.required],
-     nameOnCard: ["",Validators.required],
-     cardNumber: ["",[Validators.required,Validators.maxLength(16),Validators.minLength(16)]],
-     expiryMonth: ["",Validators.required],
-     expiryYear: ["",Validators.required],
-     cvv: ["",Validators.required]
-     
+  constructor(private fb: FormBuilder, private ccNumberField: ElementRef) { }
+  header = "My Basket";
+  paymentForm: FormGroup;
+  createPaymentForm() {
+    this.paymentForm = this.fb.group({
+      firstName: ["", Validators.required],
+      lastName: ["", Validators.required],
+      email: ["", Validators.required, Validators.email],
+      phoneNumber: ["", Validators.required],
+      adress: ["", Validators.required],
+      nameOnCard: ["", Validators.required],
+      cardNumber: ["", [Validators.required, Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^[ 0-9]*$')]],
+      expiryDate: ['', [Validators.required]],
+      cvv: ["", Validators.required]
+
     })
   }
 
+
   ngOnInit(): void {
-    this.createBuyProductForm();
+    this.createPaymentForm();
   }
-  
+
 
   creditCardNumberSpacing() {
     const input = this.ccNumberField.nativeElement;
     const { selectionStart } = input;
-    const { cardNumber } = this.buyProductForm.controls;
+    const { cardNumber } = this.paymentForm.controls;
 
     let trimmedCardNum = cardNumber.value.replace(/\s+/g, '');
 
@@ -50,10 +48,10 @@ export class BasketComponent implements OnInit {
       trimmedCardNum = trimmedCardNum.substr(0, 16);
     }
 
-     /* Handle American Express 4-6-5 spacing */
-    const partitions = trimmedCardNum.startsWith('34') || trimmedCardNum.startsWith('37') 
-                       ? [4,6,5] 
-                       : [4,4,4,4];
+    /* Handle American Express 4-6-5 spacing */
+    const partitions = trimmedCardNum.startsWith('34') || trimmedCardNum.startsWith('37')
+      ? [4, 6, 5]
+      : [4, 4, 4, 4];
 
     const numbers = [];
     let position = 0;
@@ -71,4 +69,23 @@ export class BasketComponent implements OnInit {
     }
   }
 
+
+
+  onKeyDown(event: KeyboardEvent) {
+    const input = event.target as HTMLInputElement;
+
+    const trimmed = input.value.replace(/\s+/g, '').slice(0, input.value.indexOf('/') == -1 ? 4 : 5);
+    if (trimmed.length > 3) {
+      return (input.value = `${trimmed.slice(0, 2)}/${trimmed.slice(trimmed.indexOf('/') == -1 ? 2 : 3)}`);
+    }
+  }
+
+
+
+
+
+
+
+
 }
+
