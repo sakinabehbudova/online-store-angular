@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup,FormControl, Validators } from '@angular/forms';
 import { ViewChild, ElementRef, } from '@angular/core';
 @ViewChild('ccNumber')
 
@@ -12,6 +12,7 @@ import { ViewChild, ElementRef, } from '@angular/core';
   styleUrls: ['./basket.component.css']
 })
 export class BasketComponent implements OnInit {
+ 
 
   constructor(private fb: FormBuilder, private ccNumberField: ElementRef) { }
   header = "My Basket";
@@ -25,12 +26,12 @@ export class BasketComponent implements OnInit {
       adress: ["", Validators.required],
       nameOnCard: ["", Validators.required],
       cardNumber: ["", [Validators.required, Validators.maxLength(19), Validators.minLength(19), Validators.pattern('^[ 0-9]*$')]],
-      expiryDate: ['', [Validators.required]],
+      expiryDate:['', [Validators.required]],
       cvv: ["", Validators.required]
 
     })
   }
-
+  
 
   ngOnInit(): void {
     this.createPaymentForm();
@@ -69,19 +70,19 @@ export class BasketComponent implements OnInit {
     }
   }
 
-
-
+  
+  
   onKeyDown(event: KeyboardEvent) {
     const input = event.target as HTMLInputElement;
-
-    const trimmed = input.value.replace(/\s+/g, '').slice(0, input.value.indexOf('/') == -1 ? 4 : 5);
+  
+    const trimmed = input.value.replace(/\s+/g, '').slice(0, input.value.indexOf('/')==-1?4:5);
     if (trimmed.length > 3) {
-      return (input.value = `${trimmed.slice(0, 2)}/${trimmed.slice(trimmed.indexOf('/') == -1 ? 2 : 3)}`);
+      return (input.value = `${trimmed.slice(0, 2)}/${trimmed.slice(trimmed.indexOf('/')==-1?2:3)}`);
     }
   }
 
-
-
+  
+  
 
 
 

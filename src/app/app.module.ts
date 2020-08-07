@@ -13,6 +13,7 @@ import{NgxPaginationModule} from 'ngx-pagination';
 import { AlertifyService } from './services/alertify.service';
 import{HttpClientModule} from '@angular/common/http';
 import { BasketComponent } from './basket/basket.component';
+import { NgxMaskModule, IConfig } from 'ngx-mask'
 
 
 
@@ -34,7 +35,8 @@ import { BasketComponent } from './basket/basket.component';
     FormsModule,
     ReactiveFormsModule,
     NgxPaginationModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMaskModule.forRoot(),
   ],
   providers: [AlertifyService],
   bootstrap: [AppComponent]

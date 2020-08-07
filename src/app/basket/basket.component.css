@@ -24,6 +24,42 @@ h2{
     padding: 50px 0;
     
 }
+
+#table, th  {  
+    border-bottom: 1px solid grey;  
+  /*  border-top: 1px solid grey; */
+    border-collapse: collapse;  
+    padding: 25px;  
+    font-size: 19px;
+ }  
+ #table img{
+     margin-left: -15px;
+ }
+ #table td{
+     margin-top: 30px;
+     padding-bottom: 170px;
+     font-size: 18px;
+ }
+   
+ #table tr:nth-child(odd) {  
+    background-color: #f2f2f2;  
+ }  
+ #productName{
+     margin-left: 200px;
+     margin-top: -180px;
+ }
+#total{
+    margin-top: 20px;
+    float: right;
+}
+#total p{
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 700;
+}
+#total h1{
+    color: #8cba51;
+}
 #invoice{
     padding: 50px 0;
 }

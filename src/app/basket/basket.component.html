@@ -7,7 +7,27 @@
             <p class="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
         </div>
         <div id="products">
-            <div>
+
+            <div id="table">  
+                <tr class="row">  
+                   <th class="col-6">Product</th>  
+                   <th class="col-2">Price</th>
+                   <th class="col-2">Quantity</th> 
+                   <th class="col-2">Total</th>   
+                </tr>  
+                <tr class="row">  
+                   <td class="col-6"><img style="width: 180px;height: 180px;"  src="https://images.unsplash.com/photo-1523049673857-eb18f1d7b578?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=600&q=60" alt="">
+                 <p id="productName">Avacado</p> 
+                </td>  
+                   
+                   <td class="col-2">9.99 AZN</td> 
+                   <td class="col-2">image</td>  
+                   <td class="col-2">9.99AZN</td>  
+
+                </tr>  
+            </div>
+            <div id="total" class="row">
+                <p >Total:</p> <h1>9.99AZN</h1> 
             </div>
         </div>
         <form [formGroup]="paymentForm">
